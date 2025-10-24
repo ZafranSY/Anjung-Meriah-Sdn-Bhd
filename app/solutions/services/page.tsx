@@ -297,7 +297,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-navy-900 text-white">
+      <section className="py-16 md:py-24 bg-gray-900 text-white">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">Start Your Solar Journey Today</h2>
           <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">

@@ -191,7 +191,7 @@ export default function ProductsPage() {
       })}
 
       {/* Why Choose Our Products */}
-      <section className="py-16 md:py-24 bg-navy-900 text-white">
+      <section className="py-16 md:py-24 bg-gray-900 text-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Our Products</h2>
@@ -245,7 +245,7 @@ export default function ProductsPage() {
           <p className="text-lg text-navy-900/80 mb-8 max-w-2xl mx-auto">
             Our experts will help you select the perfect products for your specific needs and budget.
           </p>
-          <Button size="lg" className="bg-navy-900 text-white hover:bg-navy-800">
+          <Button size="lg" className="bg-gray-900 text-white hover:bg-navy-800">
             Get Product Consultation
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
