@@ -1,5 +1,8 @@
-import Link from "next/link"
-import { Facebook, Linkedin, MapPin } from "lucide-react"
+// Add this import
+import Image from "next/image";
+import Link from "next/link";
+// Added Newspaper as a placeholder for Bloomberg
+import { Facebook, Linkedin, MapPin, Newspaper } from "lucide-react";
 
 export function SiteFooter() {
   return (
@@ -8,14 +11,14 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-corporate-red rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">AM</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-white text-lg leading-tight">Anjung Meriah</span>
-                <span className="text-xs text-white/70">Sdn. Bhd.</span>
-              </div>
+            <div className="mb-4">
+              <Image
+                src="/AnjungMeriah_logo.png" // Path from the public folder
+                alt="Anjung Meriah Sdn Bhd Logo"
+                width={180} // Adjust width to actual logo width if known
+                height={60} // Adjust height to actual logo height if known
+                className="h-14 w-auto" // Adjust h-14 as needed for desired display size
+              />
             </div>
             <p className="text-sm text-white/70 mb-4 leading-relaxed">
               A 100% Bumiputera, CIDB G7 Contractor and SEDA Registered EPCC Provider delivering total solutions in
@@ -106,7 +109,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info - Updated Social Links */}
           <div>
             <h3 className="font-bold mb-4">Contact Us</h3>
             <ul className="space-y-3 text-sm">
@@ -121,20 +124,38 @@ export function SiteFooter() {
                 </div>
               </li>
             </ul>
+            {/* --- Social Links Updated --- */}
             <div className="flex gap-3 mt-4">
               <a
-                href="#"
+                href="https://www.facebook.com/anjungmeriah/?locale=ms_MY" // Updated Facebook link
+                target="_blank" // Opens in new tab
+                rel="noopener noreferrer" // Security best practice
                 className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-corporate-red hover:text-white transition-colors"
+                aria-label="Anjung Meriah Facebook"
               >
                 <Facebook className="h-4 w-4" />
               </a>
               <a
-                href="#"
+                href="#" // Keep LinkedIn link placeholder for now, or add the correct URL
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-corporate-red hover:text-white transition-colors"
+                aria-label="Anjung Meriah LinkedIn"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
+              <a
+                href="https://www.bloomberg.com/profile/company/2463917D:MK" // Added Bloomberg link
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-corporate-red hover:text-white transition-colors"
+                aria-label="Anjung Meriah Bloomberg Profile"
+              >
+                {/* Using Newspaper as a placeholder icon */}
+                <Newspaper className="h-4 w-4" />
+              </a>
             </div>
+             {/* --- End Social Links Update --- */}
           </div>
         </div>
 
@@ -164,5 +185,5 @@ export function SiteFooter() {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+} //

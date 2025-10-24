@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#f8f9f8"/>
+  <g transform="translate(40,40)">
+    <rect x="0" y="220" width="720" height="80" fill="#e9ecef"/>
+    <g fill="#ffc107">
+      <rect x="40" y="80" width="120" height="120" rx="8"/>
+      <rect x="200" y="80" width="120" height="120" rx="8"/>
+      <rect x="360" y="80" width="120" height="120" rx="8"/>
+      <rect x="520" y="80" width="120" height="120" rx="8"/>
+    </g>
+    <text x="400" y="320" font-family="Arial" font-size="22" text-anchor="middle" fill="#333">4MW Solar Plant</text>
+  </g>
+</svg>
