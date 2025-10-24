@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#f8f9f8"/>
+  <g>
+    <rect x="80" y="100" width="640" height="200" fill="#e9ecef"/>
+    <circle cx="140" cy="160" r="40" fill="#ffc107"/>
+    <circle cx="240" cy="160" r="40" fill="#ffc107"/>
+    <text x="400" y="320" font-family="Arial" font-size="22" text-anchor="middle" fill="#333">Eco World Warehouse & Logistics</text>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#f8f9f8"/>
+  <g>
+    <rect x="120" y="100" width="560" height="120" fill="#e9ecef"/>
+    <circle cx="360" cy="160" r="44" fill="#ffc107"/>
+    <text x="400" y="300" font-family="Arial" font-size="22" text-anchor="middle" fill="#333">UiTM Solar Research Centre</text>
+  </g>
+</svg>

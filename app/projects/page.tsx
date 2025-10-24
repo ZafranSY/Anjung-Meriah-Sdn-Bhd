@@ -1,19 +1,18 @@
-"use client";
+"use client"
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import Image from 'next/image';
 import { MapPin, Calendar, Zap, Building2, Home, Factory, Sun, ArrowRight } from "lucide-react";
-import Link from "next/link";
-// Import the shared data
-import { allProjectsData } from "@/lib/projectsData"; // Make sure this path is correct
+
+// Import data and functions using the ALIAS
+import { projects, generateSlug, Project } from "@/lib/projectsData";
 
 export default function ProjectsPage() {
   const [selectedFilter, setSelectedFilter] = useState("all");
-
-  // Use the imported data
-  const projects = allProjectsData;
 
   const filters = [
     { id: "all", label: "All Projects", icon: Building2 },
@@ -23,6 +22,7 @@ export default function ProjectsPage() {
     { id: "solar-farm", label: "Solar Farms", icon: Sun },
   ];
 
+  // Use the imported projects array
   const filteredProjects = selectedFilter === "all" ? projects : projects.filter((p) => p.sector === selectedFilter);
 
   const stats = [
@@ -52,7 +52,7 @@ export default function ProjectsPage() {
 
       {/* Stats Section */}
       <section className="py-12 bg-background border-b">
-         <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, index) => {
               const Icon = stat.icon;
@@ -72,7 +72,7 @@ export default function ProjectsPage() {
 
       {/* Filter Section */}
       <section className="py-8 bg-navy-50 sticky top-20 z-40 border-b">
-         <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-wrap gap-3 justify-center">
             {filters.map((filter) => {
               const Icon = filter.icon;
@@ -80,7 +80,7 @@ export default function ProjectsPage() {
                 <button
                   key={filter.id}
                   onClick={() => setSelectedFilter(filter.id)}
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     selectedFilter === filter.id
                       ? "bg-navy-900 text-white"
                       : "bg-white text-navy-900 hover:bg-navy-900/10"
@@ -99,58 +99,73 @@ export default function ProjectsPage() {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
-              <Card key={project.id} className="border-none shadow-lg hover:shadow-xl transition-shadow group">
-                <CardContent className="p-0">
-                  <div className="relative h-64 overflow-hidden">
-                    <img
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.name}
-                      // Consider using Next/Image here too for optimization if needed
-                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute top-4 right-4">
-                      <Badge className="bg-solar-yellow text-navy-900 hover:bg-solar-yellow/90">
-                        {project.capacity}
-                      </Badge>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-navy-900 mb-2 text-balance">{project.name}</h3>
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
-                      <div className="flex items-center gap-1">
-                        <MapPin className="h-4 w-4" />
-                        <span>{project.location}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Calendar className="h-4 w-4" />
-                        <span>{project.year}</span>
+            {filteredProjects.map((project, projIndex) => {
+              // *** Defensive check for project object ***
+              if (!project) {
+                 console.warn(`Project at index ${projIndex} is undefined during rendering.`);
+                 return null; // Skip rendering this item
+              }
+              const projectSlug = generateSlug(project.name);
+              return (
+                <Card key={project.id || projIndex} className="border-none shadow-lg hover:shadow-xl transition-shadow group"> {/* Added fallback key */}
+                  <CardContent className="p-0 flex flex-col h-full">
+                    <div className="relative h-64 overflow-hidden">
+                      <Image
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.name || 'Project Image'}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute top-4 right-4">
+                        <Badge className="bg-solar-yellow text-navy-900 hover:bg-solar-yellow/90">
+                          {project.capacity || 'N/A'} {/* Added fallback */}
+                        </Badge>
                       </div>
                     </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-3">{project.description}</p>
-                    <div className="space-y-2 mb-4">
-                      {project.highlights.slice(0, 2).map((highlight, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-sm">
-                          <div className="w-1.5 h-1.5 rounded-full bg-solar-yellow" />
-                          <span className="text-muted-foreground">{highlight}</span>
+                    <div className="p-6 flex flex-col flex-grow">
+                      <h3 className="text-xl font-bold text-navy-900 mb-2 text-balance">{project.name || 'Unnamed Project'}</h3> {/* Added fallback */}
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
+                        <div className="flex items-center gap-1">
+                          <MapPin className="h-4 w-4" />
+                          <span>{project.location || 'Unknown Location'}</span> {/* Added fallback */}
                         </div>
-                      ))}
+                        <div className="flex items-center gap-1">
+                          <Calendar className="h-4 w-4" />
+                          <span>{project.year || 'N/A'}</span> {/* Added fallback */}
+                        </div>
+                      </div>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-grow">{project.description || 'No description available.'}</p> {/* Added fallback */}
+                      <div className="space-y-2 mb-4">
+                        {/* *** Defensive check for highlights array *** */}
+                        {Array.isArray(project.highlights) ? (
+                            project.highlights.map((highlight, idx) => (
+                              <div key={idx} className="flex items-center gap-2 text-sm">
+                                <div className="w-1.5 h-1.5 rounded-full bg-solar-yellow flex-shrink-0" />
+                                <span className="text-muted-foreground">{highlight}</span>
+                              </div>
+                            ))
+                         ) : (
+                             <p className="text-sm text-muted-foreground italic">No highlights available.</p>
+                             // *** Log if highlights are missing ***
+                             // console.warn(`Project "${project.name}" (ID: ${project.id}) is missing highlights array.`)
+                         )}
+                      </div>
+                       <Button
+                         variant="outline"
+                         className="w-full border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white bg-transparent mt-auto"
+                         asChild
+                       >
+                         <Link href={`/projects/${encodeURIComponent(projectSlug)}`}>
+                           View Details
+                           <ArrowRight className="ml-2 h-4 w-4" />
+                         </Link>
+                       </Button>
                     </div>
-                    <Button
-                      variant="outline"
-                      className="w-full border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white bg-transparent"
-                      asChild // Important: Allows Link to control navigation
-                    >
-                      {/* Link uses the project's slug */}
-                      <Link href={`/projects/${project.slug}`}>
-                         View Details
-                         <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>

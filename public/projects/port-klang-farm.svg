@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#f8f9f8"/>
+  <g>
+    <rect x="40" y="220" width="720" height="80" fill="#e9ecef"/>
+    <g fill="#ffc107">
+      <rect x="60" y="140" width="60" height="60"/>
+      <rect x="140" y="140" width="60" height="60"/>
+      <rect x="220" y="140" width="60" height="60"/>
+      <rect x="300" y="140" width="60" height="60"/>
+      <rect x="380" y="140" width="60" height="60"/>
+      <rect x="460" y="140" width="60" height="60"/>
+    </g>
+    <text x="400" y="320" font-family="Arial" font-size="22" text-anchor="middle" fill="#333">Port Klang Solar Farm</text>
+  </g>
+</svg>
