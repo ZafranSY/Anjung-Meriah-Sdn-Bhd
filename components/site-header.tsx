@@ -1,9 +1,11 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import Link from "next/link";
+// Add this import
+import Image from "next/image";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,24 +13,26 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 
 export function SiteHeader() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex h-20 items-center justify-between">
-          {/* Logo */}
+          {/* Logo - Updated Section */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-corporate-red rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">AM</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-gray-900 text-lg leading-tight">Anjung Meriah</span>
-              <span className="text-xs text-muted-foreground">Sdn. Bhd.</span>
-            </div>
+            {/* Replace the old div/spans with this Image component */}
+            <Image
+              src="/AnjungMeriah_logo.png" // Path from the public folder
+              alt="Anjung Meriah Sdn Bhd Logo"
+              width={150} // Adjust width to actual logo width if known
+              height={50} // Adjust height to actual logo height if known
+              className="h-12 w-auto" // Adjust h-12 as needed for desired display size
+              priority // Prioritize loading for LCP
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -204,5 +208,5 @@ export function SiteHeader() {
         )}
       </div>
     </header>
-  )
-}
+  );
+} //

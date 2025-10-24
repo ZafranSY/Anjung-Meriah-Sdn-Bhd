@@ -1,34 +1,35 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Sun, Zap, Award, Building2, Factory, Home, ArrowRight, CheckCircle2, Phone, Mail, Shield } from "lucide-react"
-import { useEffect, useRef } from "react"
+import Link from "next/link"; // Ensure Link is imported
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Sun, Zap, Award, Building2, Factory, Home, ArrowRight, CheckCircle2, Phone, Mail, Shield } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 export default function HomePage() {
-  const observerRef = useRef<IntersectionObserver | null>(null)
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in-up")
+            entry.target.classList.add("animate-fade-in-up");
           }
-        })
+        });
       },
-      { threshold: 0.1 },
-    )
+      { threshold: 0.1 }
+    );
 
-    const elements = document.querySelectorAll(".scroll-animate")
-    elements.forEach((el) => observerRef.current?.observe(el))
+    const elements = document.querySelectorAll(".scroll-animate");
+    elements.forEach((el) => observerRef.current?.observe(el));
 
-    return () => observerRef.current?.disconnect()
-  }, [])
+    return () => observerRef.current?.disconnect();
+  }, []);
 
   return (
     <div className="min-h-screen bg-pure-white">
+      {/* Hero Section */}
       <section className="relative h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -66,6 +67,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Services Section */}
       <section className="py-16 md:py-24 bg-pure-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-3 gap-8">
@@ -129,6 +131,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Why Choose Us Section */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12 scroll-animate">
@@ -195,6 +198,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Featured Projects Section */}
       <section className="py-16 md:py-24 bg-pure-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12 scroll-animate">
@@ -244,9 +248,11 @@ export default function HomePage() {
                     Current project status, ground-breaking photos, site plans, or artist renderings
                   </p>
                 </div>
+                {/* --- Updated Link --- */}
                 <Button className="w-full bg-corporate-red text-white hover:bg-corporate-red-dark" asChild>
-                  <Link href="/projects">View Project Details</Link>
+                  <Link href="/projects/4mw-solar-plant">View Project Details</Link>
                 </Button>
+                 {/* --- End Link Update --- */}
               </CardContent>
             </Card>
 
@@ -289,9 +295,11 @@ export default function HomePage() {
                     Artist renderings, fly-through videos, or site-in-progress photos
                   </p>
                 </div>
+                 {/* --- Updated Link --- */}
                 <Button className="w-full bg-corporate-red text-white hover:bg-corporate-red-dark" asChild>
-                  <Link href="/projects">View Project Details</Link>
+                  <Link href="/projects/510-affordable-housing">View Project Details</Link>
                 </Button>
+                {/* --- End Link Update --- */}
               </CardContent>
             </Card>
           </div>
@@ -303,6 +311,7 @@ export default function HomePage() {
               className="border-corporate-red text-corporate-red hover:bg-corporate-red/10 bg-transparent"
               asChild
             >
+              {/* This link now correctly goes to the project list page */}
               <Link href="/projects">
                 View Our Full Project Portfolio
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -394,5 +403,5 @@ export default function HomePage() {
         </div>
       </section>
     </div>
-  )
-}
+  );
+} // [cite: zafransy/anjung-meriah-sdn-bhd/Anjung-Meriah-Sdn-Bhd-c9a285c64c95d1b29ab8d757fc17d4fbdf37a7ba/app/page.tsx]
