@@ -20,7 +20,7 @@ export const projects: Project[] = [
       sector: "residential",
       capacity: "510 kW",
       year: "2024",
-  image: "/projects/510-housing.svg",
+  image: "/510-Affordable.png",
       description: "Solar power installation across 510 affordable housing units, making clean energy accessible to all.",
       highlights: [
         "510 kW total distributed capacity",
@@ -36,7 +36,7 @@ export const projects: Project[] = [
       sector: "solar-farm",
       capacity: "4 MW",
       year: "2024",
-  image: "/projects/4mw-plant.svg",
+  image: "/large-scale-ground-mounted-solar-farm-in-open-field.jpg",
       description: "A state-of-the-art 4MW solar farm installation providing clean energy to the Selangor region.",
       highlights: [
         "4MW total capacity installation",
@@ -46,13 +46,13 @@ export const projects: Project[] = [
       ]
     },
     {
-      id: 2,
+      id: 3,
       name: "Sunway Pyramid Shopping Mall",
       location: "Petaling Jaya, Selangor",
       sector: "commercial",
       capacity: "2.5 MW",
       year: "2023",
-  image: "/projects/sunway-pyramid.svg",
+  image: "/Sunway.png",
       description: "Rooftop solar installation for one of Malaysia's largest shopping malls, demonstrating commercial sustainability.",
       highlights: [
         "2.5MW rooftop installation",
@@ -62,13 +62,13 @@ export const projects: Project[] = [
       ]
     },
     {
-      id: 3,
+      id: 4,
       name: "Proton Manufacturing Facility",
       location: "Shah Alam, Selangor",
       sector: "industrial",
       capacity: "3 MW",
       year: "2023",
-  image: "/projects/proton-plant.svg",
+  image: "/proton-manufacturing.png",
       description: "Large-scale industrial solar installation supporting Proton's commitment to sustainable manufacturing.",
       highlights: [
         "3MW combined rooftop and ground installation",
@@ -78,13 +78,13 @@ export const projects: Project[] = [
       ]
     },
     {
-      id: 4,
+      id: 5,
       name: "Eco World Warehouse & Logistics",
       location: "Port Klang, Selangor",
       sector: "industrial",
       capacity: "1.8 MW",
       year: "2024",
-  image: "/projects/eco-world.svg",
+  image: "/eco-house.png",
       description: "Modern warehouse facility powered by solar, showcasing sustainable logistics operations.",
       highlights: [
         "1.8MW rooftop solar system",
@@ -94,13 +94,13 @@ export const projects: Project[] = [
       ]
     },
     {
-      id: 5,
+      id: 6,
       name: "IPC Shopping Centre",
       location: "Mutiara Damansara, Selangor",
       sector: "commercial",
       capacity: "1.2 MW",
       year: "2024",
-  image: "/projects/ipc-mall.svg",
+  image: "/IPC.png",
       description: "Comprehensive solar installation at IPC Shopping Centre, featuring advanced energy monitoring and smart grid integration.",
       highlights: [
         "1.2MW rooftop system",
@@ -110,13 +110,13 @@ export const projects: Project[] = [
       ]
     },
     {
-      id: 6,
+      id: 7,
       name: "Green Terrace Residences",
       location: "Mont Kiara, Kuala Lumpur",
       sector: "residential",
       capacity: "800 kW",
       year: "2023",
-  image: "/projects/green-terrace.svg",
+  image: "/Green.png",
       description: "Multi-building residential solar project serving 300 luxury apartments with individual monitoring systems.",
       highlights: [
         "800kW distributed system",
@@ -126,13 +126,13 @@ export const projects: Project[] = [
       ]
     },
     {
-      id: 7,
+      id: 8,
       name: "UiTM Solar Research Centre",
       location: "Shah Alam, Selangor",
       sector: "commercial",
       capacity: "250 kW",
       year: "2024",
-  image: "/projects/uitm-solar.svg",
+  image: "/uitm.png",
       description: "Educational and research facility featuring multiple solar technologies and real-time data collection for academic studies.",
       highlights: [
         "250kW hybrid system",
@@ -142,13 +142,13 @@ export const projects: Project[] = [
       ]
     },
     {
-      id: 8,
+      id: 9,
       name: "Port Klang Solar Farm",
       location: "Port Klang, Selangor",
       sector: "solar-farm",
       capacity: "10 MW",
       year: "2024",
-  image: "/projects/port-klang-farm.svg",
+  image: "/port-klang.png",
       description: "Large-scale ground-mounted solar farm providing renewable energy to Port Klang's industrial operations.",
       highlights: [
         "10MW ground-mounted installation",

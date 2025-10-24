@@ -10,7 +10,7 @@ export default function SectorsPage() {
       tagline: "Power Your Home with Clean Energy",
       description:
         "Transform your home into a sustainable energy hub with rooftop solar systems designed for Malaysian residential properties.",
-      image: "/residential-home-with-rooftop-solar-panels-install.jpg",
+      image: "/residential-solar.png",
       benefits: [
         "Reduce electricity bills by up to 90%",
         "Increase property value",
@@ -34,7 +34,7 @@ export default function SectorsPage() {
       tagline: "Reduce Operating Costs, Boost Sustainability",
       description:
         "Commercial solar solutions that deliver significant cost savings while enhancing your corporate sustainability profile.",
-      image: "/modern-commercial-building-with-solar-panels-on-ro.jpg",
+      image: "/IPC.png",
       benefits: [
         "Significant operational cost reduction",
         "Enhanced corporate sustainability",
@@ -64,7 +64,7 @@ export default function SectorsPage() {
       tagline: "Power Your Operations Sustainably",
       description:
         "Large-scale solar solutions engineered for high-energy industrial operations, delivering substantial cost savings and energy security.",
-      image: "/large-industrial-facility-with-extensive-solar-pan.jpg",
+      image: "/proton-manufacturing.png",
       benefits: [
         "Massive energy cost reduction",
         "Hedge against rising electricity prices",
@@ -94,7 +94,7 @@ export default function SectorsPage() {
       tagline: "Utility-Scale Renewable Energy",
       description:
         "Large-scale solar farm development for utility companies, investors, and landowners seeking to capitalize on renewable energy opportunities.",
-      image: "/large-scale-solar-farm-with-rows-of-solar-panels.jpg",
+      image: "/large-scale-ground-mounted-solar-farm-in-open-field.jpg",
       benefits: [
         "Significant revenue generation",
         "Long-term stable returns",
@@ -123,7 +123,7 @@ export default function SectorsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 bg-navy-900 text-white overflow-hidden">
+      <section className="relative py-20 md:py-32 bg-gray-900 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,.05)_25%,rgba(255,255,255,.05)_50%,transparent_50%,transparent_75%,rgba(255,255,255,.05)_75%,rgba(255,255,255,.05))] bg-[length:60px_60px]" />
         </div>
@@ -186,14 +186,14 @@ export default function SectorsPage() {
                     <h3 className="font-bold text-navy-900 mb-3">Ideal For:</h3>
                     <div className="flex flex-wrap gap-2">
                       {sector.idealFor.map((item, idx) => (
-                        <span key={idx} className="text-xs bg-navy-900 text-white px-3 py-1.5 rounded-full">
+                        <span key={idx} className="text-xs bg-gray-900 text-white px-3 py-1.5 rounded-full">
                           {item}
                         </span>
                       ))}
                     </div>
                   </div>
 
-                  <Button className="bg-navy-900 text-white hover:bg-navy-800">
+                  <Button className="bg-gray-900 text-white hover:bg-navy-800">
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -215,7 +215,7 @@ export default function SectorsPage() {
       })}
 
       {/* Comparison Section */}
-      <section className="py-16 md:py-24 bg-navy-900 text-white">
+      <section className="py-16 md:py-24 bg-gray-900">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Solar Makes Sense</h2>
@@ -224,8 +224,8 @@ export default function SectorsPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="bg-white/10 border-white/20 text-white">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl text-white mx-auto">
+            <Card className="bg-white/10 border-white/20  text-white ">
               <CardContent className="p-6 text-center">
                 <div className="w-16 h-16 rounded-full bg-solar-yellow/20 flex items-center justify-center mx-auto mb-4">
                   <DollarSign className="h-8 w-8 text-solar-yellow" />
@@ -237,7 +237,7 @@ export default function SectorsPage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/10 border-white/20 text-white">
+            <Card className="bg-white/10 border-white/20  text-white ">
               <CardContent className="p-6 text-center">
                 <div className="w-16 h-16 rounded-full bg-solar-yellow/20 flex items-center justify-center mx-auto mb-4">
                   <TrendingUp className="h-8 w-8 text-solar-yellow" />
@@ -249,7 +249,7 @@ export default function SectorsPage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/10 border-white/20 text-white">
+            <Card className="bg-white/10 border-white/20  text-white ">
               <CardContent className="p-6 text-center">
                 <div className="w-16 h-16 rounded-full bg-solar-yellow/20 flex items-center justify-center mx-auto mb-4">
                   <Leaf className="h-8 w-8 text-solar-yellow" />
@@ -273,7 +273,7 @@ export default function SectorsPage() {
           <p className="text-lg text-navy-900/80 mb-8 max-w-2xl mx-auto">
             Our experts will assess your requirements and design a custom solar system that maximizes your benefits.
           </p>
-          <Button size="lg" className="bg-navy-900 text-white hover:bg-navy-800">
+          <Button size="lg" className="bg-gray-900 text-white hover:bg-navy-800">
             Get Sector-Specific Quote
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>

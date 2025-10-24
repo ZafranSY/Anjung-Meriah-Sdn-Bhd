@@ -35,7 +35,7 @@ export default function ProjectsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 bg-navy-900 text-white overflow-hidden">
+      <section className="relative py-20 md:py-32 bg-gray-900 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,.05)_25%,rgba(255,255,255,.05)_50%,transparent_50%,transparent_75%,rgba(255,255,255,.05)_75%,rgba(255,255,255,.05))] bg-[length:60px_60px]" />
         </div>
@@ -82,8 +82,8 @@ export default function ProjectsPage() {
                   onClick={() => setSelectedFilter(filter.id)}
                   className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     selectedFilter === filter.id
-                      ? "bg-navy-900 text-white"
-                      : "bg-white text-navy-900 hover:bg-navy-900/10"
+                      ? "bg-gray-900 text-white"
+                      : "bg-white text-navy-900 hover:bg-gray-900/10"
                   }`}
                 >
                   <Icon className="h-4 w-4" />
@@ -153,7 +153,7 @@ export default function ProjectsPage() {
                       </div>
                        <Button
                          variant="outline"
-                         className="w-full border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white bg-transparent mt-auto"
+                         className="w-full border-navy-900 text-navy-900 hover:bg-gray-900 hover:text-white bg-transparent mt-auto"
                          asChild
                        >
                          <Link href={`/projects/${encodeURIComponent(projectSlug)}`}>
@@ -171,7 +171,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-navy-900 text-white">
+      <section className="py-16 md:py-24 bg-gray-900 text-white">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">Ready to Start Your Solar Project?</h2>
           <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
