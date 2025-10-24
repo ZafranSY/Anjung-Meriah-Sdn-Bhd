@@ -29,16 +29,16 @@ export function SiteHeader() {
         <div className="flex h-20 items-center justify-between">
       {/* Logo (uses standard Link) */}
           <Link href="/" className="flex items-center space-x-2">
-            
+
             {/* Just the Image component by itself */}
             <Image
-              src="/AnjungMeriah_logo.png" 
+              src="/AnjungMeriah_logo.png"
               alt="Anjung Meriah Logo"
               width={40}
               height={40}
               className="rounded-lg" // This is good if your logo file isn't already rounded
             />
-            
+
             {/* This part is fine */}
             <div className="flex flex-col">
               <span className="font-bold text-gray-900 text-lg leading-tight">Anjung Meriah</span>
@@ -136,11 +136,18 @@ export function SiteHeader() {
             </NavigationMenuList>
           </NavigationMenu>
 
-          {/* CTA Button */}
+          {/* CTA Button (Desktop) */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button className="bg-corporate-red text-white hover:bg-corporate-red-dark font-semibold">
-              Request Quote
+             {/* --- Updated Desktop Button --- */}
+            <Button
+              className="bg-corporate-red text-white hover:bg-corporate-red-dark font-semibold"
+              asChild // Add this prop
+            >
+              <Link href="/contact"> {/* Wrap with Link and set href */}
+                Request Quote
+              </Link>
             </Button>
+            {/* --- End Updated Desktop Button --- */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -190,9 +197,17 @@ export function SiteHeader() {
               <Link href="/contact" className="text-sm font-medium text-gray-900 hover:text-corporate-red" onClick={() => setMobileMenuOpen(false)}>
                 Contact
               </Link>
-              <Button className="bg-corporate-red text-white hover:bg-corporate-red-dark font-semibold w-full">
-                Request Quote
+              {/* --- Updated Mobile Button --- */}
+              <Button
+                className="bg-corporate-red text-white hover:bg-corporate-red-dark font-semibold w-full"
+                asChild // Add this prop
+                onClick={() => setMobileMenuOpen(false)} // Keep the onClick handler
+              >
+                <Link href="/contact"> {/* Wrap with Link and set href */}
+                  Request Quote
+                </Link>
               </Button>
+               {/* --- End Updated Mobile Button --- */}
             </nav>
           </div>
         )}

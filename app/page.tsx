@@ -3,7 +3,7 @@
 import Link from "next/link"; // Ensure Link is imported
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Sun, Zap, Award, Building2, Factory, Home, ArrowRight, CheckCircle2, Phone, Mail, Shield } from "lucide-react";
+import { Sun, Zap, Award, Building2, Factory, Home, ArrowRight, CheckCircle2, Phone, Mail, Shield, Calendar } from "lucide-react"; // Added Calendar
 import { useEffect, useRef } from "react";
 
 export default function HomePage() {
@@ -50,10 +50,18 @@ export default function HomePage() {
               management, and infrastructure solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-corporate-red text-white hover:bg-corporate-red-dark font-semibold">
-                Request a Quote
-                <ArrowRight className="ml-2 h-5 w-5" />
+              {/* --- Updated Button --- */}
+              <Button
+                size="lg"
+                className="bg-corporate-red text-white hover:bg-corporate-red-dark font-semibold"
+                asChild // Add this prop
+              >
+                <Link href="/contact"> {/* Wrap with Link and set href */}
+                  Request a Quote
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
+              {/* --- End Updated Button --- */}
               <Button
                 size="lg"
                 variant="outline"
@@ -384,24 +392,35 @@ export default function HomePage() {
             help you achieve your goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-corporate-red hover:bg-gray-100">
-              <Phone className="mr-2 h-5 w-5" />
-              Call Us Now
+            {/* --- Updated Call Us Now Button --- */}
+            <Button
+              size="lg"
+              className="bg-white text-corporate-red hover:bg-gray-100"
+              asChild // Add this
+            >
+              <a href="tel:+60123456789"> {/* Replace with your actual phone number */}
+                <Phone className="mr-2 h-5 w-5" />
+                Call Us Now
+              </a>
             </Button>
+            {/* --- End Updated Button --- */}
+
+            {/* --- Updated Schedule Site Visit Button --- */}
             <Button
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white/10 bg-transparent"
               asChild
             >
-              <Link href="/contact">
-                <Mail className="mr-2 h-5 w-5" />
-                Get In Touch
+              <Link href="/contact"> {/* Links to contact page */}
+                <Calendar className="mr-2 h-5 w-5" /> {/* Added Calendar Icon */}
+                Schedule Site Visit
               </Link>
             </Button>
+            {/* --- End Updated Button --- */}
           </div>
         </div>
       </section>
     </div>
   );
-} // [cite: zafransy/anjung-meriah-sdn-bhd/Anjung-Meriah-Sdn-Bhd-c9a285c64c95d1b29ab8d757fc17d4fbdf37a7ba/app/page.tsx]
+}
