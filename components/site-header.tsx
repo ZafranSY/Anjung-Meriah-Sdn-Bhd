@@ -4,6 +4,8 @@ import Link from "next/link" // Keep Link for the Logo and mobile menu
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
+
+import Image from "next/image";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -25,17 +27,24 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex h-20 items-center justify-between">
-          {/* Logo (uses standard Link) */}
+      {/* Logo (uses standard Link) */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-corporate-red rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">AM</span>
-            </div>
+            
+            {/* Just the Image component by itself */}
+            <Image
+              src="/AnjungMeriah_logo.png" 
+              alt="Anjung Meriah Logo"
+              width={40}
+              height={40}
+              className="rounded-lg" // This is good if your logo file isn't already rounded
+            />
+            
+            {/* This part is fine */}
             <div className="flex flex-col">
               <span className="font-bold text-gray-900 text-lg leading-tight">Anjung Meriah</span>
               <span className="text-xs text-muted-foreground">Sdn. Bhd.</span>
             </div>
           </Link>
-
           {/* Desktop Navigation */}
           <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList>
